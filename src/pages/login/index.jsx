@@ -6,13 +6,17 @@ function Login() {
   const [emailValue, setEmailValue] = useState('');
   return (
     <div className="login">
-      <div className="container-login">
-        <div className="title">
-          <h1>Faça login para ter acesso a plataforma</h1>
-        </div>
+      <div className="container-left"></div>
+      <div className="container-right">
         <div className="form">
-          <InputEmail></InputEmail>
-          <InputPassword></InputPassword>
+          <div className="title">
+            <h1>Faça login para ter acesso</h1>
+          </div>
+          <div className="inputs">
+            <InputEmail></InputEmail>
+            <InputPassword></InputPassword>
+            <button className="submit-btn">login</button>
+          </div>
         </div>
       </div>
     </div>

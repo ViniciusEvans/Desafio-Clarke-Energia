@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700&family=Inter&display=swap');
+
+.login {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  .container-left {
+    width: 30%;
+    min-height: 100%;
+    background-image: url('../../assets/solar-panels-1477987.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container-right {
+    width: 70%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form {
+      width: 30%;
+      .title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+        color: #00d084;
+      }
+      .inputs {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
