@@ -17,6 +17,10 @@ input {
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
+  width: 100%;
+  &:focus {
+    border: 0.1rem #00d084 solid;
+  }
 }
 div.div-inputPassword {
   display: flex;
@@ -26,6 +30,7 @@ div.div-inputPassword {
   border: 0.1rem #000 solid;
   padding: 0.7rem;
   margin-bottom: 3rem;
+  width: 100%;
   input {
     border: none;
     padding: 0;

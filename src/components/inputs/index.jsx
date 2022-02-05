@@ -1,29 +1,51 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import hide from '../../assets/hide.svg';
 import show from '../../assets/show.svg';
 import './style.scss';
-export function InputEmail() {
+export function InputEmail({ state, setState }) {
   return (
     <>
       <label htmlFor="email">E-mail</label>
-      <input id="email" type="email" required />
+      <input
+        value={state}
+        onChange={(e) => setState(e.target.value)}
+        id="email"
+        type="email"
+        required
+      />
     </>
   );
 }
 
-export function InputPassword() {
+export function InputPassword({ state, setState }) {
   const [passwordVisibility, setPasswordVisibility] = useState('password');
+  const refInputPass = useRef();
 
   function handleChangeVisibility() {
     setPasswordVisibility(
       passwordVisibility === 'password' ? 'text' : 'password'
     );
   }
+
+  function onFocus(focus) {
+    refInputPass.current.style.border = focus
+      ? '0.1rem #000 solid'
+      : '0.1rem #00d084 solid';
+  }
   return (
     <>
       <label htmlFor="password">Senha</label>
-      <div className="div-inputPassword">
-        <input id="password" type={passwordVisibility} required />
+
+      <div ref={refInputPass} className="div-inputPassword ">
+        <input
+          value={state}
+          onChange={(e) => setState(e.target.value)}
+          onFocus={() => onFocus(false)}
+          onBlur={() => onFocus(true)}
+          id="password"
+          type={passwordVisibility}
+          required
+        />
         <img
           onClick={handleChangeVisibility}
           src={passwordVisibility === 'password' ? hide : show}
