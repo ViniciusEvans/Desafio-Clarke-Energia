@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import hide from '../../assets/hide.svg';
+import show from '../../assets/show.svg';
+import './style.scss';
 export function InputEmail() {
   return (
     <>
@@ -10,13 +14,19 @@ export function InputEmail() {
 export function InputPassword() {
   const [passwordVisibility, setPasswordVisibility] = useState('password');
 
+  function handleChangeVisibility() {
+    setPasswordVisibility(
+      passwordVisibility === 'password' ? 'text' : 'password'
+    );
+  }
   return (
     <>
       <label htmlFor="password">Senha</label>
       <div>
         <input id="password" type={passwordVisibility} required />
         <img
-          src=""
+          onClick={handleChangeVisibility}
+          src={passwordVisibility === 'password' ? hide : show}
           alt={
             passwordVisibility === 'password'
               ? 'senha escondida'
