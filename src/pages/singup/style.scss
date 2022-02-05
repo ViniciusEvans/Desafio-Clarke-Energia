@@ -10,48 +10,64 @@
     align-items: center;
     .form {
       width: 30%;
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 130%;
-      color: #00d084;
       .title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
         h1 {
           margin: 0;
           margin-bottom: 1rem;
+          color: #00d084;
         }
       }
       .inputs {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        .submit-btn {
-          all: unset;
-          cursor: pointer;
-          font-family: nunito;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 130%;
-          color: #000;
-          background-color: #00d084;
-          border: 0.15rem #000 solid;
-          border-radius: 1.5rem;
-          padding: 0.7rem 7rem;
-          margin: 3rem 30%;
+      }
+      .submit-btn {
+        all: unset;
+        cursor: pointer;
+        font-family: nunito;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        white-space: nowrap;
+        color: #000;
+        background-color: #00d084;
+        border: 0.15rem #000 solid;
+        border-radius: 1.5rem;
+        padding: 0.7rem 7rem;
+        margin: 3rem 30%;
 
-          box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.061),
-            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.089),
-            100px 100px 80px rgba(0, 0, 0, 0.15);
-          &:active {
-            transition: 0.2s;
-            opacity: 0.9;
-            box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.089),
-              22.3px 22.3px 17.9px rgba(0, 0, 0, 0.131),
-              100px 100px 80px rgba(0, 0, 0, 0.22);
-          }
+        box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.061),
+          22.3px 22.3px 17.9px rgba(0, 0, 0, 0.089),
+          100px 100px 80px rgba(0, 0, 0, 0.15);
+        &:active {
+          transition: 0.2s;
+          opacity: 0.9;
+          box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.089),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.131),
+            100px 100px 80px rgba(0, 0, 0, 0.22);
         }
+      }
+    }
+    .redirect-singup {
+      font-family: nunito;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      margin-top: 1rem;
+      a {
+        margin-left: 0.5rem;
+        color: #00d084;
       }
     }
   }
