@@ -1,0 +1,65 @@
+.Singup {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  .container-left {
+    width: 70%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form {
+      width: 30%;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 130%;
+      color: #00d084;
+      .title {
+        h1 {
+          margin: 0;
+          margin-bottom: 1rem;
+        }
+      }
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .submit-btn {
+          all: unset;
+          cursor: pointer;
+          font-family: nunito;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 130%;
+          color: #000;
+          background-color: #00d084;
+          border: 0.15rem #000 solid;
+          border-radius: 1.5rem;
+          padding: 0.7rem 7rem;
+          margin: 3rem 30%;
+
+          box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.061),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.089),
+            100px 100px 80px rgba(0, 0, 0, 0.15);
+          &:active {
+            transition: 0.2s;
+            opacity: 0.9;
+            box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.089),
+              22.3px 22.3px 17.9px rgba(0, 0, 0, 0.131),
+              100px 100px 80px rgba(0, 0, 0, 0.22);
+          }
+        }
+      }
+    }
+  }
+  .container-right {
+    width: 30%;
+    min-height: 100%;
+    background-image: url('../../assets/renewable-1989416.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

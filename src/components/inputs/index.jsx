@@ -2,6 +2,21 @@ import { useRef, useState } from 'react';
 import hide from '../../assets/hide.svg';
 import show from '../../assets/show.svg';
 import './style.scss';
+
+export function InputName({ state, setState }) {
+  return (
+    <>
+      <label htmlFor="name">Nome</label>
+      <input
+        value={state}
+        onChange={(e) => setState(e.target.value)}
+        id="name"
+        type="text"
+      />
+    </>
+  );
+}
+
 export function InputEmail({ state, setState }) {
   return (
     <>
@@ -17,7 +32,7 @@ export function InputEmail({ state, setState }) {
   );
 }
 
-export function InputPassword({ state, setState }) {
+export function InputPassword({ state, setState, children }) {
   const [passwordVisibility, setPasswordVisibility] = useState('password');
   const refInputPass = useRef();
 
@@ -34,7 +49,7 @@ export function InputPassword({ state, setState }) {
   }
   return (
     <>
-      <label htmlFor="password">Senha</label>
+      <label htmlFor="password">{children}</label>
 
       <div ref={refInputPass} className="div-inputPassword ">
         <input
