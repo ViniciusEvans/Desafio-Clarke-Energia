@@ -22,7 +22,7 @@ export function InputPassword() {
   return (
     <>
       <label htmlFor="password">Senha</label>
-      <div>
+      <div className="div-inputPassword">
         <input id="password" type={passwordVisibility} required />
         <img
           onClick={handleChangeVisibility}
