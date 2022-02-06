@@ -7,6 +7,21 @@ import InterpriseCard from '../../components/interpriseCard';
 function Dashboard() {
   const { msg } = useContext(AuthContext);
   const [searchValue, setSearchValue] = useState('');
+  const [offset, setOffset] = useState(1);
+
+  function handleOffset(param) {
+    if (param) {
+      setOffset(offset + 1);
+      return;
+    }
+    if (!param) {
+      if (offset === 0) {
+        return;
+      }
+      setOffset(offset - 1);
+      return;
+    }
+  }
 
   return (
     <div className="dashboard">
@@ -38,6 +53,18 @@ function Dashboard() {
           <InterpriseCard />
           <InterpriseCard />
           <InterpriseCard />
+          <div className="carousel">
+            <button
+              onClick={() => handleOffset(false)}
+              className="btn back-btn"
+            >
+              {'<'}
+            </button>
+            <span className="offset">{offset}</span>
+            <button onClick={() => handleOffset(true)} className="btn next-btn">
+              {'>'}
+            </button>
+          </div>
         </div>
       </div>
     </div>

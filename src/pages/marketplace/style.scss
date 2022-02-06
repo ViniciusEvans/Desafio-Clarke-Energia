@@ -72,6 +72,31 @@
       justify-content: center;
       align-items: center;
       width: 100%;
+      .carousel {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        .btn {
+          all: unset;
+          font-size: 3rem;
+          background-color: #00d084;
+          border: 0.1rem #000 solid;
+          border-radius: 1.5rem;
+          padding: 0.2rem 1rem;
+          margin: 1rem;
+          cursor: pointer;
+          box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.061),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.089),
+            100px 100px 80px rgba(0, 0, 0, 0.15);
+          &:active {
+            transition: 0.2s;
+            opacity: 0.9;
+            box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.089),
+              22.3px 22.3px 17.9px rgba(0, 0, 0, 0.131),
+              100px 100px 80px rgba(0, 0, 0, 0.22);
+          }
+        }
+      }
     }
   }
 }
