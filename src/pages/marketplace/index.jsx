@@ -50,9 +50,7 @@ function Dashboard() {
         <div className="matched-enterprises">
           <InterpriseCard />
           <InterpriseCard />
-          <InterpriseCard />
-          <InterpriseCard />
-          <InterpriseCard />
+
           <div className="carousel">
             <button
               onClick={() => handleOffset(false)}

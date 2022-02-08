@@ -8,8 +8,8 @@ export function InputName({ state, setState }) {
     <>
       <label htmlFor="name">Nome</label>
       <input
-        value={state}
-        onChange={(e) => setState(e.target.value)}
+        value={state.nameValue}
+        onChange={(e) => setState({ ...state, nameValue: e.target.value })}
         id="name"
         type="text"
       />
@@ -22,8 +22,8 @@ export function InputEmail({ state, setState }) {
     <>
       <label htmlFor="email">E-mail</label>
       <input
-        value={state}
-        onChange={(e) => setState(e.target.value)}
+        value={state.emailValue}
+        onChange={(e) => setState({ ...state, emailValue: e.target.value })}
         id="email"
         type="email"
         required
@@ -32,10 +32,9 @@ export function InputEmail({ state, setState }) {
   );
 }
 
-export function InputPassword({ state, setState, children }) {
+export function InputPassword({ state, inputState, setState, children }) {
   const [passwordVisibility, setPasswordVisibility] = useState('password');
   const refInputPass = useRef();
-
   function handleChangeVisibility() {
     setPasswordVisibility(
       passwordVisibility === 'password' ? 'text' : 'password'
@@ -53,8 +52,8 @@ export function InputPassword({ state, setState, children }) {
 
       <div ref={refInputPass} className="div-inputPassword ">
         <input
-          value={state}
-          onChange={(e) => setState(e.target.value)}
+          value={state[inputState]}
+          onChange={(e) => setState({ ...state, [inputState]: e.target.value })}
           onFocus={() => onFocus(false)}
           onBlur={() => onFocus(true)}
           id="password"

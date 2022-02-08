@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { InputEmail, InputPassword } from '../../components/inputs';
 import ErrorMessage from '../../components/errorMessage';
+import { InputEmail, InputPassword } from '../../components/inputs';
 import './style.scss';
 function Login() {
   const [passwordValue, setPasswordValue] = useState('');
   const [emailValue, setEmailValue] = useState('');
+  const [emailMessage, setEmailMessage] = useState('');
   const [error, setError] = useState({
     emailError: false,
     passwordError: false,
@@ -15,10 +16,17 @@ function Login() {
     if (!verifyInputs()) {
       return;
     }
+    setError({ emailError: false, passwordError: false });
   }
-
   function verifyInputs() {
     if (!emailValue) {
+      setEmailMessage('Falta o e-mail');
+      const backup = { ...error, emailError: true };
+      setError(backup);
+      return false;
+    }
+    if (!emailValue.match(/@/)) {
+      setEmailMessage('E-mail inválido');
       const backup = { ...error, emailError: true };
       setError(backup);
       return false;
@@ -28,7 +36,7 @@ function Login() {
       setError(backup);
       return false;
     }
-    setError({ emailError: false, passwordError: false });
+    return true;
   }
 
   return (
@@ -44,7 +52,7 @@ function Login() {
               state={emailValue}
               setState={setEmailValue}
             ></InputEmail>
-            {error.emailError && <ErrorMessage text="Falta o email" />}
+            {error.emailError && <ErrorMessage text={emailMessage} />}
             <InputPassword state={passwordValue} setState={setPasswordValue}>
               Senha
             </InputPassword>
