@@ -1,21 +1,8 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import './style.scss';
 
 function Redirecting() {
-  const navigate = useNavigate();
-
-  useEffect(()=>{
-    redirect();
-  }, [])
-
-  async function redirect(){
-    navigate('/login')
-    return 
-  }
-  return (
-    <div className="error"><h1>error 404!</h1></div>
-  )
+  return <Navigate to="/login" />;
 }
 
 export default Redirecting;
