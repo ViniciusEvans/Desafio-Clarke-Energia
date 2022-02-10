@@ -92,9 +92,11 @@ function Login() {
               Senha
             </InputPassword>
             {error.passwordError && <ErrorMessage text="Falta a senha" />}
-            <button onClick={handleLogin} className="submit-btn">
-              login
-            </button>
+            <div>
+              <button onClick={handleLogin} className="submit-btn">
+                login
+              </button>
+            </div>
           </div>
           <span className="redirect-singup">
             Não é cadastrado? faça seu cadstro clicando

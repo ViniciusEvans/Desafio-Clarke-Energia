@@ -159,9 +159,11 @@ function Singup() {
             {errorMessage.errorRepPass && (
               <ErrorMessage text={validationMessages.rePassValidation} />
             )}
-            <button onClick={handleSingup} className="submit-btn">
-              Cadastre-se
-            </button>
+            <div>
+              <button onClick={handleSingup} className="submit-btn">
+                Cadastre-se
+              </button>
+            </div>
           </div>
           <span className="redirect-singup">
             Já tem conta? faça seu login clicando

@@ -1,9 +1,9 @@
 import './style.scss';
 
-function InterpriseCard({ name, address, cost, min, clients, rate }) {
+function InterpriseCard({ name, address, cost, min, clients, rate, logo }) {
   return (
     <div className="enterprise-card">
-      <div className="image-logo"></div>
+      <div className="image-logo" style={{ backgroundColor: logo }}></div>
       <div className="enterprise-info">
         <span className="name">Nome: {name}</span>
         <span className="address">Localidade: {address}</span>
