@@ -42,6 +42,8 @@ function Dashboard() {
         notifySucess('Logado com sucesso!');
       } else {
         notifyError(data.mensagem);
+        remove();
+        navigate('/login');
       }
     } catch (error) {
       console.log(error.message);
@@ -73,11 +75,13 @@ function Dashboard() {
       });
       const data = await response.json();
       if (response.status === 200) {
+        console.log(canChange);
         setinterprises(data);
         setCanChange(true);
         return true;
       } else {
         notifyError(data.mensagem);
+        setOffset(1);
         setCanChange(false);
         return false;
       }
@@ -109,7 +113,6 @@ function Dashboard() {
       return;
     }
     const a = await handleGetInterprises();
-    console.log(a);
   }
 
   return (
@@ -159,6 +162,7 @@ function Dashboard() {
                 min={e.min_demand}
                 clients={e.clients}
                 rate={e.rate}
+                logo={e.logo}
               />
             );
           })}
