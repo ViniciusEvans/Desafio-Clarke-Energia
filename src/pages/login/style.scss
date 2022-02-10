@@ -4,6 +4,33 @@
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
+  @media only screen and (max-width: 1024px) {
+    .container-left {
+      display: none;
+    }
+    .container-right {
+      min-width: 100%;
+    }
+  }
+  @media only screen and (max-width: 728px) {
+    .login {
+      .container-right {
+        .form {
+          width: 50%;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 364px) {
+    .login {
+      .container-right {
+        .form {
+          width: 70%;
+        }
+      }
+    }
+  }
+
   .container-left {
     width: 30%;
     min-height: 100%;
@@ -28,37 +55,42 @@
         color: #00d084;
         h1 {
           margin-bottom: 1rem;
+          text-align: center;
+          line-height: 3.5rem;
         }
       }
       .inputs {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
-        .submit-btn {
-          all: unset;
-          cursor: pointer;
-          font-family: nunito;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 130%;
-          color: #000;
-          background-color: #00d084;
-          border: 0.15rem #000 solid;
-          border-radius: 1.5rem;
-          padding: 0.7rem 7rem;
-          margin: 3rem 30%;
-
-          box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.061),
-            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.089),
-            100px 100px 80px rgba(0, 0, 0, 0.15);
-          &:active {
-            transition: 0.2s;
-            opacity: 0.9;
-            box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.089),
-              22.3px 22.3px 17.9px rgba(0, 0, 0, 0.131),
-              100px 100px 80px rgba(0, 0, 0, 0.22);
+        div {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          .submit-btn {
+            all: unset;
+            cursor: pointer;
+            font-family: nunito;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 130%;
+            color: #000;
+            background-color: #00d084;
+            border: 0.15rem #000 solid;
+            border-radius: 1.5rem;
+            padding: 0.7rem 7rem;
+            margin: 3rem 0;
+            box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.061),
+              22.3px 22.3px 17.9px rgba(0, 0, 0, 0.089),
+              100px 100px 80px rgba(0, 0, 0, 0.15);
+            &:active {
+              transition: 0.2s;
+              opacity: 0.9;
+              box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.089),
+                22.3px 22.3px 17.9px rgba(0, 0, 0, 0.131),
+                100px 100px 80px rgba(0, 0, 0, 0.22);
+            }
           }
         }
       }

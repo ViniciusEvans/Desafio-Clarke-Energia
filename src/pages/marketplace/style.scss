@@ -3,6 +3,8 @@
   width: 100vw;
   min-height: 100vh;
   background-color: #fafafa;
+  @media only screen and (max-width: 1024px) {
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -11,11 +13,14 @@
     font-weight: 900;
     color: #00d084;
     margin-bottom: 5rem;
-    padding-right: 15rem;
     border-bottom: 0.1rem #000 solid;
+    padding: 2rem 0;
+    img {
+      margin-right: 15%;
+    }
     .logo {
       position: relative;
-      margin: 2rem 30rem;
+      margin-left: 15%;
       .ecommerce-name {
         margin: 0;
         font-size: 4rem;
@@ -34,11 +39,18 @@
       width: 4rem;
     }
   }
-
   .search-enterprise {
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    label {
+      text-align: center;
+    }
+    .input-search {
+      min-width: 20rem;
+      margin-bottom: 1rem;
+    }
     .submit-btn {
       all: unset;
       cursor: pointer;

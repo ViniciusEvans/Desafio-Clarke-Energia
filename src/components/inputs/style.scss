@@ -9,6 +9,7 @@ label {
 }
 input {
   all: unset;
+  box-sizing: border-box;
   padding: 0.7rem;
   border: 0.1rem #000 solid;
   border-radius: 1.5rem;
@@ -29,7 +30,7 @@ div.div-inputPassword {
   border-radius: 1.5rem;
   border: 0.1rem #000 solid;
   padding: 0.7rem;
-
+  box-sizing: border-box;
   width: 100%;
   input {
     border: none;

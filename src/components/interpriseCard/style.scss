@@ -1,24 +1,30 @@
 .enterprise-card {
   display: flex;
-  height: 10rem;
+  min-height: 10rem;
   width: 65%;
   margin: 1.5rem;
   background-color: #d4d4d4;
   .image-logo {
+    min-width: 10rem;
     width: 10rem;
+    box-sizing: border-box;
     background-repeat: no-repeat;
     background-size: cover;
     margin-right: 1rem;
   }
   .enterprise-info {
+    display: flex;
+    flex-wrap: wrap;
     span {
       display: inline-block;
-      width: 25%;
+      min-width: 25%;
       font-size: 2rem;
       margin: 1rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
     }
+  }
+}
+@media only screen and (max-width: 972px) {
+  .enterprise-card {
+    min-width: 90vw;
   }
 }
