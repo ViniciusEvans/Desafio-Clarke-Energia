@@ -6,7 +6,6 @@
   background-color: #d4d4d4;
   .image-logo {
     width: 10rem;
-    background-image: url('../../assets/solar-panels-1477987.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     margin-right: 1rem;
@@ -17,6 +16,9 @@
       width: 25%;
       font-size: 2rem;
       margin: 1rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 }
