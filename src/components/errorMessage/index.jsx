@@ -1,7 +1,7 @@
-function ErrorMessage({ text }) {
+function ErrorMessage({ style, text }) {
   return (
     <>
-      <span style={{ fontSize: '1.6rem', color: 'red' }}>{text}</span>
+      <span style={{ fontSize: '1.6rem', color: 'red', ...style }}>{text}</span>
     </>
   );
 }
